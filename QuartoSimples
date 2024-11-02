@@ -1,0 +1,21 @@
+public class QuartoSimples implements Acomodacao, ServicoAdicional {
+	
+	public double calcularDiaria() {
+		return 100;
+	}
+	
+	public void exibirDetalhes(int dias) {
+        System.out.println("Quarto Simples:");
+        System.out.printf("Diária: R$ %.2f%n", calcularDiaria());
+        System.out.printf("Custo Total (sem serviços adicionais): R$ %.2f%n", calcularDiaria() * dias);
+    }
+
+	public double calcularServico(int pessoas, boolean limpeza, int dias){
+		int servico = pessoas * 25 * dias; //cafe da manha
+		if(limpeza == true) {
+			servico +=  30 * dias;
+		}
+		return servico;
+		
+	}
+}
