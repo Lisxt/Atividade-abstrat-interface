@@ -1,0 +1,30 @@
+public class Onibus extends Veiculo {
+
+	private double valor;
+	
+	//construtor
+	public Onibus(String placa, String marca, String modelo, int AnoFabri, int valor) {
+		super(placa, marca, modelo, AnoFabri);
+		this.valor = valor;
+	}
+	
+	public double getValor() {
+		return valor;
+	}
+
+	@Override
+	public void calcularIPVA(){
+		double valorEstimado = valor - ((2024 - getAnoFabri()) * 3.000);
+		double IPVA = valorEstimado * 0.02;
+		System.out.printf("Valor do IPVA:%.2f", IPVA);
+	}
+	
+	@Override
+	public void exibirDetalhes(){
+		System.out.println("\n---ONIBUS---" + "\nPlaca:" + getPlaca() + "\nMarca:" + getMarca() 
+		+"\nModelo:" + getModelo() + "\nAno de Fabricação:" + getAnoFabri()
+		+ "\nValor do Veiculo "+ valor);
+		calcularIPVA();		
+	} 
+	
+}
