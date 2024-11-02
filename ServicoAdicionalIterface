@@ -1,0 +1,3 @@
+public interface ServicoAdicional {
+	double calcularServico(int pessoas, boolean limpeza, int dias);
+}
