@@ -1,0 +1,17 @@
+public class Principal {
+
+	public static void main(String[] args) {
+        
+		Carro carro = new Carro("ABC-1234", "Toyota", "Corolla", 2020, 120000);
+        Caminhao caminhao = new Caminhao("XYZ-5678", "Volvo", "FH", 2018, 756000);
+        Onibus onibus = new Onibus("LMN-9101", "Mercedes", "O500", 2015, 600000);
+
+        carro.exibirDetalhes();
+        System.out.print("\n");
+        
+        caminhao.exibirDetalhes();
+        System.out.print("\n");
+        
+        onibus.exibirDetalhes();
+    }
+}
