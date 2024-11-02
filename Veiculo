@@ -1,0 +1,36 @@
+public abstract class Veiculo {
+    //classe abstrata
+	
+	//atributos
+	
+	 private String placa;
+	 private String marca;
+	 private String modelo;
+	 private int AnoFabri;
+	
+	//construtor
+	
+	public Veiculo(String placa, String marca, String modelo, int AnoFabri) {
+		this.placa = placa;
+		this.modelo = modelo;
+		this.marca = marca;
+		this.AnoFabri = AnoFabri;
+	}
+	//metodos abstrato
+		public abstract void calcularIPVA();
+		public abstract void exibirDetalhes();
+		
+	//GET
+	public String getPlaca() {
+		return placa;
+	}
+	public String getMarca() {
+		return marca;
+	}
+	public String getModelo() {
+		return modelo;
+	}
+	public int getAnoFabri() {
+		return AnoFabri;
+	}
+}
