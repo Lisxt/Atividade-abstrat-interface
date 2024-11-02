@@ -1,0 +1,50 @@
+import java.util.Scanner;
+
+public class Principal {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        QuartoSimples simples = new QuartoSimples();
+        QuartoDuplo duplo= new QuartoDuplo();
+        Suite suite = new Suite();
+        
+        System.out.print("Quantos dias você ficar?");
+        int dias = scanner.nextInt();
+
+        System.out.print("\nQuantas pessoas?");
+        int numeroPessoas = scanner.nextInt();
+
+        System.out.print("Deseja limpeza extra?(true/false)");
+        boolean limpezaExtra = scanner.nextBoolean();
+        
+        System.out.println("Escolha o tipo de acomodação:");
+        System.out.println("1 - Quarto Simples");
+        System.out.println("2 - Quarto Duplo");
+        System.out.println("3 - Suíte");
+        
+        int escolha = scanner.nextInt();
+       
+        
+        switch(escolha) {
+            case 1:
+                simples.exibirDetalhes(dias);
+                double total = 100 * dias + simples.calcularServico(numeroPessoas, limpezaExtra, dias);
+                System.out.println("Total:" + total);
+                break;
+            case 2:
+            	duplo.exibirDetalhes(dias);
+                total = 180 * dias + duplo.calcularServico(numeroPessoas, limpezaExtra, dias);
+                System.out.printf("Total:"+ total);
+                break;
+            case 3:
+            	suite.exibirDetalhes(dias);
+                total = 350* dias + suite.calcularServico(numeroPessoas, limpezaExtra, dias);
+                System.out.printf("Total:"+ total);
+                break;
+            default:
+                System.out.println("Opção inválida.");
+        }
+   
+        scanner.close();
+    }
+}
