@@ -1,0 +1,30 @@
+public class Carro extends Veiculo {
+	
+	//atributos
+     private double valor;
+	
+	//construtor
+	public Carro(String placa, String marca, String modelo, int AnoFabri, int valor) {
+		super(placa, marca, modelo, AnoFabri);
+		this.valor = valor;
+	}
+	
+	public double getValor() {
+		return valor;
+	}
+	
+	public void calcularIPVA(){
+		double valorEstimado = valor - ((2024 - getAnoFabri()) * 3.000);
+		double IPVA = valorEstimado * 0.02;
+		System.out.printf("Valor do IPVA:%.2f", IPVA);
+	}
+	@Override
+	public void exibirDetalhes(){
+		System.out.println("---CARRO---" + "\nPlaca:" + getPlaca() + "\nMarca:" + getMarca() 
+		+"\nModelo:" + getModelo() + "\nAno de Fabricação:" + getAnoFabri()
+		+ "\nValor do Veiculo "+ valor);
+		calcularIPVA();
+		
+	}
+
+}
